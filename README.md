@@ -82,7 +82,7 @@ When internal database lacks relevant information:
 - **Avoids speculation** - only evidence-based conclusions
 
 #### Step 5: Structured Knowledge Storage 💾
-For new information from web searches, the system creates **structured JSON objects**:
+For new information from web searches (i.e., not already present in the internal vector database), the system creates **structured JSON objects** that encapsulate the essence of the claim evaluation. This includes the original claim, an evidence level tag (e.g., High, Medium, Low), an explanatory reasoning passage summarising the model’s inference, and a list of source references with URLs. The JSON structure is illustrated as follows:
 
 ```json
 {
@@ -99,6 +99,9 @@ For new information from web searches, the system creates **structured JSON obje
   }]
 }
 ```
+By organizing this information into a well-defined JSON schema, MedClarify transforms raw, unstructured web content into a distilled, high-utility **Knowledge Artefacts**.
+
+These **structured JSON objects** are stored as **Knowledge Artefacts** in the Pinecone Database and later used for reference in case of semantically similar health queries in future. Hence, it facilitates **Knowledge Reuse** as the previous LLM responses are stored, and the system doesn't need to re-initiate a full **web-retrieval-and-reasoning pipeline** — which involves performing another web search, extracting content, and invoking the LLM for reasoning across the web contents. The system can directly fetch the precomputed structured response, so that the LLM can refer to its previous response and doesn’t have to perform complex reasoning from scratch again and again.
 
 ### 🚀 Key Benefits
 - **⚡ Avoids redundant processing** for similar future queries
