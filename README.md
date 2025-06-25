@@ -3,14 +3,14 @@
 > A modular, domain-specialized artificial intelligence system designed to address distinct yet interconnected challenges in the medical domain through Health Claim Verification and Medical Report Analysis.
 
 ## 📋 Table of Contents
-- [Overview](#overview)
-- [Problem Statement](#problem-statement)
-- [System Components](#system-components)
-- [Health Claim Verification Module](#health-claim-verification-module)
-- [Medical Report Analysis Module](#medical-report-analysis-module)
-- [Technology Stack](#technology-stack)
-- [Data Sources](#data-sources)
-- [Getting Started](#getting-started)
+- [Overview](#-overview)
+- [Problem Statement](#-problem-statement)
+- [System Components](#️-system-components)
+- [Health Claim Verification Module](#-health-claim-verification-module)
+- [Medical Report Analysis Module](#-medical-report-analysis-module)
+- [Technology Stack](#️-technology-stack)
+- [Data Sources](#-data-sources--knowledge-base)
+- [Getting Started](#-getting-started)
 
 ## 🎯 Overview
 
