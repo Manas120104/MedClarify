@@ -59,10 +59,10 @@ Leverages **Mistral-7B-Instruct-v0.3** within a **Retrieval-Augmented Generation
 #### Step 1: Claim Input 📝
 Users can submit various types of health queries:
 - **Specific assertions**: *"Dark chocolate improves cognitive function"*
-- **Comparative statements**: *"Vitamin D is more effective than calcium for bone health"* OR *"Inhaling steam with eucalyptus oil can eliminate the coronavirus from the
-lungs"*
-- **General inquiries**: *"Garlic and health"* OR *"Benefits and risks of intermittent fasting"*
-- **Treatment queries**: *"Does garlic lower blood pressure?"*
+- **Comparative statements**: *"Vitamin D is more effective than calcium for bone health"*, *"Covishield has better efficacy than Covaxin"*
+- **General inquiries**: *"Garlic and health"*, *"Benefits and risks of intermittent fasting"*
+- **Treatment queries**: *"Does garlic lower blood pressure?"*, *"Inhaling steam with eucalyptus oil can eliminate the coronavirus from the
+lungs"*, *"Mixing Covaxin and Covishield vaccines may result in harmful side effects"*
 
 #### Step 2: Semantic Search Retrieval 🔎
 - Uses **Sentence Transformer** to create semantic embeddings of the query
