@@ -82,7 +82,7 @@ When internal database lacks relevant information:
 - **Avoids speculation** - only evidence-based conclusions
 
 #### Step 5: Structured Knowledge Storage 💾
-For new information from web searches (i.e., not already present in the internal vector database), the system creates **structured JSON objects** that encapsulate the essence of the claim evaluation. This includes the original claim, an evidence level tag (e.g., High, Medium, Low), an explanatory reasoning passage summarising the model’s inference, and a list of source references with URLs. The JSON structure is illustrated as follows:
+For new information from web searches (i.e., not already present in the internal vector database), the system creates **structured JSON objects** that encapsulate the essence of the claim evaluation. These JSON objects include the original claim, an evidence level tag (e.g., High, Medium, Low), an explanatory reasoning passage summarising the model’s inference, and a list of source references with URLs. The JSON structure is illustrated as follows:
 
 ```json
 {
