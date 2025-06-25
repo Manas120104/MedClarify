@@ -99,7 +99,7 @@ For new information from web searches (i.e., not already present in the internal
   }]
 }
 ```
-By organizing the information retrieved from the web into a well-defined JSON schema, MedClarify transforms raw, unstructured web content into a distilled, high-utility **Knowledge Artefacts**.
+By organizing the information retrieved from the web into a well-defined JSON schema, MedClarify transforms raw, unstructured web content into distilled, high-utility **Knowledge Artefacts**.
 
 These **Knowledge Artefacts** are stored in the **Pinecone Vector Database** and later used for reference in case of **semantically similar health queries in future**. Hence, it facilitates **Knowledge Reuse** as the previous LLM responses are stored, and the system doesn't need to re-initiate a full **web-retrieval-and-reasoning pipeline** — which involves performing another web search, extracting content, and invoking the LLM for reasoning across the web contents. The system can directly fetch the precomputed structured response, so that the LLM can refer to its previous response and doesn’t have to perform complex reasoning from scratch again and again.
 
