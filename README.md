@@ -1,5 +1,9 @@
 # MedClarify 🏥
 
+<div align="center">
+  <img src="https://biteable.com/wp-content/uploads/2022/11/Healthcare01.gif" alt="Healthcare" width="200"/>
+</div>
+
 > A modular, domain-specialized artificial intelligence system designed to address distinct yet interconnected challenges in the medical domain through Health Claim Verification and Medical Report Analysis.
 
 ## 📋 Table of Contents
