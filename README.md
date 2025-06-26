@@ -5,9 +5,11 @@
 </div>
 
 > A modular, domain-specialized artificial intelligence system designed to address distinct yet interconnected challenges in the medical domain through Health Claim Verification and Medical Report Analysis.
+
 <table>
 <tr>
 <td width="50%" valign="top">
+  
 ## 📋 Table of Contents
 - [Overview](#-overview)
 - [Problem Statement](#-problem-statement)
@@ -17,12 +19,14 @@
 - [Technology Stack](#️-technology-stack)
 - [Data Sources](#-data-sources--knowledge-base)
 - [Getting Started](#-getting-started)
+
 </td>
 <td width="50%" valign="top" align="center">
 <img src="https://cdn.dribbble.com/userupload/26434877/file/original-14e9fb98d7146baae3b39c2fc5fd11bc.gif" alt="Medical Analysis" width="100%"/>
 </td>
 </tr>
 </table>
+
 ## 🎯 Overview
 
 MedClarify tackles two major challenges in healthcare:
