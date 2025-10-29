@@ -17,6 +17,7 @@
 - [System Components](#️-system-components)
 - [Health Claim Verification Module](#-health-claim-verification-module)
 - [Medical Report Analysis Module](#-medical-report-analysis-module)
+- [System Design and Architecture](#system-design-and-architecture)
 - [MedClarify UI Preview](#-medclarify-ui-preview)
 - [Technology Stack](#️-technology-stack)
 - [Data Sources](#-data-sources--knowledge-base)
@@ -182,23 +183,41 @@ These **Knowledge Artefacts** are stored in the **Pinecone Vector Database** and
 - **Key Findings** about the patient's health from the report
 - **Additional Questions** suggested for patients to ask their doctor
 
-## 🛠️ Technology Stack
 
-### Core Models
-- **🤖 Mistral-7B-Instruct-v0.3**: Primary LLM for reasoning and generation
-- **🧬 BioMistral-7B**: Medical domain-specialized model for terminology explanation
-- **🏷️ BIOMed NER**: Transformer-based biomedical entity recognition
-- **🔤 Sentence Transformer**: Semantic embedding generation
+## System Design and Architecture
+The following images show the system design and architecture of both the modules -
 
-### Infrastructure
-- **🗄️ Pinecone**: Vector database for knowledge storage and retrieval
-- **🔍 Google Search API**: Web search fallback mechanism  
-- **📄 PyPDF2**: PDF document text extraction library
+<p align="center">
+  <img src="./images/HealthClaim.png" alt="health-claim-design" width="100%"/>
+</p>
 
-### Data Format
-- **📋 JSON structured output** for machine-readable results
-- **🔗 Source attribution** with URLs and citations
-- **📊 Evidence level tagging** (High, Medium, Low)
+*Complete LLM-based verification and RAG-based retrieval pipeline.*
+
+---
+
+<p align="center">
+  <img src="./images/ReportAnalysis.png" alt="report-analysis-design" width="100%"/>
+</p>
+
+*Complete LLM-based medical report analysis and summarization.*
+
+---
+
+<p align="center">
+  <img src="./images/healthClaimActDiag.jpg" alt="health-claim-activity-diagram" width="100%"/>
+</p>
+
+*Activity diagram for health claim verification module.*
+
+---
+
+<p align="center">
+  <img src="./images/ReportAnalysis.jpg" alt="report-analysis-activity-diagram" width="100%"/>
+</p>
+
+*Activity diagram for medical report analysis module.*
+
+---
 
 
 ## 🤖 MedClarify UI Preview
@@ -239,6 +258,25 @@ The following images showcase MedClarify in action for both tasks -
 </p>
 
 *User enters a clinical report, and the system analyses and summarizes it, including the key findings about the patient's health and suggested additional questions for the patient.*
+
+
+## 🛠️ Technology Stack
+
+### Core Models
+- **🤖 Mistral-7B-Instruct-v0.3**: Primary LLM for reasoning and generation
+- **🧬 BioMistral-7B**: Medical domain-specialized model for terminology explanation
+- **🏷️ BIOMed NER**: Transformer-based biomedical entity recognition
+- **🔤 Sentence Transformer**: Semantic embedding generation
+
+### Infrastructure
+- **🗄️ Pinecone**: Vector database for knowledge storage and retrieval
+- **🔍 Google Search API**: Web search fallback mechanism  
+- **📄 PyPDF2**: PDF document text extraction library
+
+### Data Format
+- **📋 JSON structured output** for machine-readable results
+- **🔗 Source attribution** with URLs and citations
+- **📊 Evidence level tagging** (High, Medium, Low)
 
 
 ## 📚 Data Sources & Knowledge Base
