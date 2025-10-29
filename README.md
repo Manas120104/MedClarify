@@ -1,10 +1,11 @@
-# MedClarify 🏥
+# MedClarify 🏥: A Healthcare GenAI Assistant for Health Claim Verification and Clinical Report Analysis
 
 <div align="center">
   <img src="https://biteable.com/wp-content/uploads/2022/11/Healthcare01.gif" alt="Healthcare" width="400"/>
 </div>
 
-> A modular, domain-specialized artificial intelligence system designed to address distinct yet interconnected challenges in the medical domain through Health Claim Verification and Medical Report Analysis.
+> - A modular, domain-specialized artificial intelligence system designed to address distinct yet interconnected challenges in the medical domain through Health Claim Verification and Medical Report Analysis.
+> - Leverages advanced LLMs (Large Language Models) and RAG (Retrieval Augmented Generation) for factually correct, well-grounded, user friendly responses
 
 <table>
 <tr>
@@ -16,6 +17,7 @@
 - [System Components](#️-system-components)
 - [Health Claim Verification Module](#-health-claim-verification-module)
 - [Medical Report Analysis Module](#-medical-report-analysis-module)
+- [MedClarify UI Preview](#-medclarify-ui-preview)
 - [Technology Stack](#️-technology-stack)
 - [Data Sources](#-data-sources--knowledge-base)
 - [Getting Started](#-getting-started)
@@ -32,7 +34,7 @@
 MedClarify tackles two major challenges in healthcare:
 
 1. **⚡ Inefficiencies and complexities** involved in manually verifying health claims
-2. **📄 Difficulties in interpreting** dense medical documentation for non-specialist users
+2. **📄 Difficulties in interpreting** dense medical documentation for non-specialist users, who don't understand complex medical jargon without expert consultation.
 
 The system is built around **two principal components** that work together to make medical information more accessible while maintaining accuracy and reliability.
 
@@ -58,7 +60,7 @@ MedClarify consists of **two strategically developed modules**:
 ┌─────────────────────────────────────────────────────────┐
 │                    MedClarify System                    │
 ├─────────────────────┬───────────────────────────────────┤
-│  🔍 Health Claim    │  📋 Medical Report Analysis       │
+│  🔍 Health Claim    |  📋 Medical Report Analysis      │
 │     Verification    │      Module                       │
 │     Module          │                                   │
 └─────────────────────┴───────────────────────────────────┘
@@ -66,13 +68,19 @@ MedClarify consists of **two strategically developed modules**:
 
 ## 🔍 Health Claim Verification Module
 
+### What is a health claim first of all?
+A health claim refers to any statement that connects a particular food or food component to a potential health benefit or a reduced risk of disease. In essence, it describes a relationship between a food substance — such as a whole food, a nutrient, or a dietary supplement ingredient — and a specific health outcome. For example, manufacturers of oat-based cereals often claim that oat bran helps reduce cholesterol levels, thereby lowering the likelihood of developing serious heart conditions. Similarly, non-starchy vegetables are associated with a decreased risk of cardiovascular disease, while calcium intake is linked to the prevention of osteoporosis. Such claims are intended to guide consumers toward making informed dietary choices that promote long-term health and disease prevention.
+
 ### 🎯 Purpose
-Leverages **Mistral-7B-Instruct-v0.3** within a **Retrieval-Augmented Generation (RAG) framework** to verify health claims using authoritative medical sources.
+- The purpose of this "Health Claim Verification Module" of MedClarify is to verify these health-related claims by evaluating their scientific validity and evidence base, ensuring that statements about food, nutrition, or medical benefits are supported by credible research.
+- It systematically analyzes published biomedical literature, clinical studies, and authoritative medical sources to determine whether a given health claim is factual, exaggerated, or misleading.
+- It leverages **Mistral-7B-Instruct-v0.3** LLM within a **Retrieval-Augmented Generation (RAG) framework** to verify health claims using authoritative medical sources.
+- By combining natural language understanding, evidence retrieval, and domain-specific reasoning, the assistant helps promote trustworthy health communication and empowers users to make informed, evidence-backed decisions about diet, wellness, and medical products.
 
 ### 🔄 How It Works
 
 #### Step 1: Claim Input 📝
-Users can submit various types of health queries:
+Users can submit various types of health queries/claims:
 - **Specific assertions**: *"Dark chocolate improves cognitive function"*
 - **Comparative statements**: *"Vitamin D is more effective than calcium for bone health"*, *"Covishield has better efficacy than Covaxin"*
 - **General inquiries**: *"Garlic and health"*, *"Benefits and risks of intermittent fasting"*
@@ -80,18 +88,18 @@ Users can submit various types of health queries:
 lungs"*, *"Mixing Covaxin and Covishield vaccines may result in harmful side effects"*
 
 #### Step 2: Semantic Search Retrieval 🔎
-- Uses **Sentence Transformer** to create semantic embeddings of the query
-- Searches **Pinecone-powered vector database** using vector similarity search
+- Uses **Sentence Transformer** as the **Embedding Model**, which internally leverages the **MPNet-base Transformer** architecture to create semantic vector embeddings of the query
+- Searches **Pinecone vector database** using vector similarity search (cosine similarity)
 - Retrieves relevant passages from the curated medical knowledge base
 
 #### Step 3: Web Search Retrieval 🌐
 When internal database lacks relevant information:
 - Activates **Google Search API** as fallback mechanism
-- **Constrains searches** to predefined credible health sources only
+- **Constrains searches** to predefined credible health sources only (websites like WHO, NIH, CDC, etc.)
 - Forwards retrieved web content to the language model
 
 #### Step 4: Claim Validation ✅
-- **Mistral-7B-Instruct-v0.3** processes all retrieved evidence
+- **The Mistral-7B-Instruct-v0.3 LLM** processes all retrieved evidence
 - Generates natural language response with **judgement on the health claim**
 - **Strictly grounds decisions** in factual information from provided sources
 - **Avoids speculation** - only evidence-based conclusions
@@ -128,19 +136,22 @@ These **Knowledge Artefacts** are stored in the **Pinecone Vector Database** and
 ## 📋 Medical Report Analysis Module
 
 ### 🎯 Purpose
-**Bridges the gap** between complex clinical documentation and patient comprehension by automating extraction, explanation, and summarization of medical reports.
+- The purpose of this "Medical Report Analysis Module" of MedClarify is to interpret and summarize complex clinical documents into clear, comprehensible insights that support both healthcare professionals and patients in understanding key medical information.
+- It employs advanced natural language processing (NLP) and domain-specialized generative AI techniques to extract critical details such as diagnoses, treatments, diseases, lab findings, and prognostic indicators from lengthy or technical reports.
+- By transforming dense medical jargon into structured, human-readable summaries, this module enhances clinical transparency, aids in decision-making, and ensures that vital health information is accurate, concise, and easily accessible to all stakeholders in the healthcare process, including common people.
+- It **bridges the gap** between complex clinical documentation and patient comprehension by automating extraction, explanation, and summarization of medical reports.
 
 ### 🔄 Multi-Stage Processing Pipeline
 
 #### Step 1: PDF Text Extraction 📄
 - Uses **PyPDF2 library** for robust text extraction
 - **Maintains original formatting, structure, and contextual coherence**
-- Preserves relationships between sections (diagnoses, findings, medications, observations)
+- Preserves relationships between sections (diagnoses, findings, medications, diseases, observations)
 
 #### Step 2: Named Entity Recognition (NER) 🏷️
-- Processes extracted text with **BIOMed NER model**
+- Processes extracted text with **BIOMed NER model** that leverages the **DeBERTaV3 Transformer Model** internally
 - **Transformer-based biomedical NER framework** trained specifically for medical content
-- **Detects and classifies** medically relevant entities:
+- **Detects and extracts** medically relevant entities:
   - 🦠 Diseases
   - 💊 Drug names  
   - 🩺 Treatment protocols
@@ -150,15 +161,15 @@ These **Knowledge Artefacts** are stored in the **Pinecone Vector Database** and
   - 🔬 Diagnostic procedures
 
 #### Step 3: Medical Terminology Explanation 📚
-- Uses **BioMistral-7B model** for domain-specialized explanations
+- Uses **BioMistral-7B LLM** for domain-specialized explanations
 - **Fine-tuned on medical literature and clinical data**
 - Generates **medically reliable explanations** for extracted biomedical entities
 - **Simplifies complex terms** without compromising factual integrity
 
 #### Step 4: Comprehensive Summarization 📝
-- **Mistral-7B-Instruct-v0.3** processes complete medical content:
+- **The Mistral-7B-Instruct-v0.3 LLM** processes complete medical content:
   - Original report text
-  - Identified entities  
+  - Identified biomedical entities  
   - Generated explanations
 - Creates **cohesive, concise, and conversational summary**
 - **Preserves clinical relevance** while being accessible to patients
@@ -168,6 +179,8 @@ These **Knowledge Artefacts** are stored in the **Pinecone Vector Database** and
 - **Patient-friendly summary** displayed on user interface
 - **Holistic and comprehensible overview** of medical reports
 - **Clinical accuracy maintained** throughout the simplification process
+- **Key Findings** about the patient's health from the report
+- **Additional Questions** suggested for patients to ask their doctor
 
 ## 🛠️ Technology Stack
 
@@ -186,6 +199,19 @@ These **Knowledge Artefacts** are stored in the **Pinecone Vector Database** and
 - **📋 JSON structured output** for machine-readable results
 - **🔗 Source attribution** with URLs and citations
 - **📊 Evidence level tagging** (High, Medium, Low)
+
+
+## 🤖 MedClarify UI Preview
+The following images showcase MedClarify in action for both tasks -
+
+### Health Claim Verification
+
+
+---
+
+### Clinical Report Analysis
+
+
 
 ## 📚 Data Sources & Knowledge Base
 
