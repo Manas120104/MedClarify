@@ -22,6 +22,7 @@
 - [Technology Stack](#️-technology-stack)
 - [Data Sources](#-data-sources--knowledge-base)
 - [Getting Started](#-getting-started)
+- [License](#-license)
 
 </td>
 <td width="50%" valign="top" align="center">
@@ -320,6 +321,11 @@ This ensures **verifiably grounded responses** in credible evidence and maintain
 - **📚 Plain-language medical term explanations**
 - **👥 Patient-centered report summaries**
 - **🎯 Clinical accuracy preservation**
+
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
