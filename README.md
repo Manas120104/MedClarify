@@ -205,12 +205,40 @@ These **Knowledge Artefacts** are stored in the **Pinecone Vector Database** and
 The following images showcase MedClarify in action for both tasks -
 
 ### Health Claim Verification
+<p align="center">
+  <img src="./images/medclaim2.png" alt="health-claim-UI1" width="100%"/>
+</p>
 
+<p align="center">
+  <img src="./images/medclaim5.png" alt="health-claim-UI2" width="100%"/>
+</p>
+
+<p align="center">
+  <img src="./images/medclaim6.png" alt="health-claim-UI3" width="100%"/>
+</p>
+
+*User enters a claim stating "Inhaling steam with eucalyptus kills the coronavirus in your lungs", and the system verifies it whether it is a scientifically-backed medical fact.*
 
 ---
 
 ### Clinical Report Analysis
+<p align="center">
+  <img src="./images/reportEx1.png" alt="report-analysis-UI1" width="100%"/>
+</p>
 
+<p align="center">
+  <img src="./images/reportEx3.png" alt="report-analysis-UI2" width="100%"/>
+</p>
+
+<p align="center">
+  <img src="./images/reportEx41.png" alt="report-analysis-UI4" width="100%"/>
+</p>
+
+<p align="center">
+  <img src="./images/reportEx8.png" alt="report-analysis-UI5" width="100%"/>
+</p>
+
+*User enters a clinical report, and the system analyses and summarizes it, including the key findings about the patient's health and suggested additional questions for the patient.*
 
 
 ## 📚 Data Sources & Knowledge Base
