@@ -189,7 +189,7 @@ These **Knowledge Artefacts** are stored in the **Pinecone Vector Database** and
 The following images show the system design and architecture of both the modules -
 
 <p align="center">
-  <img src="./images/HealthClaim.png" alt="health-claim-design" width="100%"/>
+  <img src="https://cdn.jsdelivr.net/gh/Manas120104/MedClarify@main/images/HealthClaim.png" alt="health-claim-design" width="100%"/>
 </p>
 
 *Complete LLM-based verification and RAG-based retrieval pipeline.*
@@ -197,7 +197,7 @@ The following images show the system design and architecture of both the modules
 ---
 
 <p align="center">
-  <img src="./images/ReportAnalysis.png" alt="report-analysis-design" width="100%"/>
+  <img src="https://cdn.jsdelivr.net/gh/Manas120104/MedClarify@main/images/ReportAnalysis.png" alt="report-analysis-design" width="100%"/>
 </p>
 
 *Complete LLM-based medical report analysis and summarization.*
@@ -205,7 +205,7 @@ The following images show the system design and architecture of both the modules
 ---
 
 <p align="center">
-  <img src="./images/healthClaimActDiag.jpg" alt="health-claim-activity-diagram" width="100%"/>
+  <img src="https://cdn.jsdelivr.net/gh/Manas120104/MedClarify@main/images/healthClaimActDiag.jpg" alt="health-claim-activity-diagram" width="100%"/>
 </p>
 
 *Activity diagram for health claim verification module.*
@@ -213,7 +213,7 @@ The following images show the system design and architecture of both the modules
 ---
 
 <p align="center">
-  <img src="./images/ReportAnalysis.jpg" alt="report-analysis-activity-diagram" width="100%"/>
+  <img src="https://cdn.jsdelivr.net/gh/Manas120104/MedClarify@main/images/ReportAnalysis.jpg" alt="report-analysis-activity-diagram" width="100%"/>
 </p>
 
 *Activity diagram for medical report analysis module.*
@@ -226,15 +226,15 @@ The following images showcase MedClarify in action for both tasks -
 
 ### Health Claim Verification
 <p align="center">
-  <img src="./images/medclaim2.png" alt="health-claim-UI1" width="100%"/>
+  <img src="https://cdn.jsdelivr.net/gh/Manas120104/MedClarify@main/images/medclaim2.png" alt="health-claim-UI1" width="100%"/>
 </p>
 
 <p align="center">
-  <img src="./images/medclaim5.png" alt="health-claim-UI2" width="100%"/>
+  <img src="https://cdn.jsdelivr.net/gh/Manas120104/MedClarify@main/images/medclaim5.png" alt="health-claim-UI2" width="100%"/>
 </p>
 
 <p align="center">
-  <img src="./images/medclaim6.png" alt="health-claim-UI3" width="100%"/>
+  <img src="https://cdn.jsdelivr.net/gh/Manas120104/MedClarify@main/images/medclaim6.png" alt="health-claim-UI3" width="100%"/>
 </p>
 
 *User enters a claim stating "Inhaling steam with eucalyptus kills the coronavirus in your lungs", and the system verifies it whether it is a scientifically-backed medical fact.*
@@ -243,19 +243,19 @@ The following images showcase MedClarify in action for both tasks -
 
 ### Clinical Report Analysis
 <p align="center">
-  <img src="./images/reportEx1.png" alt="report-analysis-UI1" width="100%"/>
+  <img src="https://cdn.jsdelivr.net/gh/Manas120104/MedClarify@main/images/reportEx1.png" alt="report-analysis-UI1" width="100%"/>
 </p>
 
 <p align="center">
-  <img src="./images/reportEx3.png" alt="report-analysis-UI2" width="100%"/>
+  <img src="https://cdn.jsdelivr.net/gh/Manas120104/MedClarify@main/images/reportEx3.png" alt="report-analysis-UI2" width="100%"/>
 </p>
 
 <p align="center">
-  <img src="./images/reportEx41.png" alt="report-analysis-UI4" width="100%"/>
+  <img src="https://cdn.jsdelivr.net/gh/Manas120104/MedClarify@main/images/reportEx41.png" alt="report-analysis-UI4" width="100%"/>
 </p>
 
 <p align="center">
-  <img src="./images/reportEx8.png" alt="report-analysis-UI5" width="100%"/>
+  <img src="https://cdn.jsdelivr.net/gh/Manas120104/MedClarify@main/images/reportEx8.png" alt="report-analysis-UI5" width="100%"/>
 </p>
 
 *User enters a clinical report, and the system analyses and summarizes it, including the key findings about the patient's health and suggested additional questions for the patient.*
